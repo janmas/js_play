@@ -4,6 +4,37 @@
     <title>Test Page</title>
 </head>
 <body>
+    <script>
+        (function () {
+            // object creation
+            var o = new Object();
+            console.log(o.constructor === Object)
+        })();
+
+
+        (function () {
+            // new operator
+            var Person = function (name) {
+                this.name = name;
+            };
+
+            Person.prototype.say = function () {
+                return "I am " + this.name;
+            };
+
+            var p = new Person('tom');
+            console.log(p);
+
+            var p2 = Person('kate');
+            console.log(p2 === undefined);
+        })();
+
+        (function () {
+            var o = {};
+            console.log(Object.prototype.isPrototypeOf(o));
+        })();
+        
+    </script>
 
 </body>
 </html>
